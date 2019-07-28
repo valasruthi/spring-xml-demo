@@ -15,9 +15,9 @@ public static void main(String[] args){
   ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
   Movie movie=(Movie) context.getBean("movie");
   System.out.println(movie.getActor());
-  Movie movie2=(Movie) context.getBean("movie2");
-  System.out.println(movie.getActor());
-
+ movie.setApplicationContext(context);
+ movie.setBeanFactory(xmlBeanFactory);
+ movie.setBeanName("beandata");
 
 }
 }
