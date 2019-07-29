@@ -8,10 +8,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 public static void main(String[] args){
-  ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+  ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
-  ((ClassPathXmlApplicationContext) applicationContext).registerShutdownHook();
-  BeanLifeCycle beanLifeCycle = (BeanLifeCycle) applicationContext.getBean("cycle");
+  Movie movie1 = (Movie) context.getBean("MovieA", Movie.class);
+  System.out.println(movie1);
+
+  Movie movie2 = (Movie) context.getBean("MovieB");
+  System.out.println(movie2);
+
+  ((ClassPathXmlApplicationContext) context).
+    registerShutdownHook();
 
 
 }

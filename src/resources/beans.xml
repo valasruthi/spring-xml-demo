@@ -6,10 +6,25 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 
-  <bean id="cycle" class="com.stackroute.domain.BeanLifeCycle" init-method="Init" destroy-method="clean" ></bean>
+  <bean id="actor" class="com.stackroute.domain.Actor">
+    <constructor-arg value="Sruthi" index="0" type="java.lang.String"></constructor-arg>
+    <constructor-arg value="female" index="1" type="java.lang.String"></constructor-arg>
+    <constructor-arg value="20" index="2"></constructor-arg>
+  </bean>
+  <bean id="actor2" class="com.stackroute.domain.Actor">
+    <constructor-arg value="chinni" index="0" type="java.lang.String"></constructor-arg>
+    <constructor-arg value="female" index="1" type="java.lang.String"></constructor-arg>
+    <constructor-arg value="20" index="2"></constructor-arg>
+  </bean>
+  <bean id="MovieA" class="com.stackroute.domain.Movie" scope="prototype" autowire="byName">
 
+  </bean>
+  <bean id="MovieB" class="com.stackroute.domain.Movie" scope="prototype" autowire="constructor">
 
+  </bean>
+  <bean class="com.stackroute.domain.BeanPostProcessorDemoBean">
 
+  </bean>
 
 
 </beans>
