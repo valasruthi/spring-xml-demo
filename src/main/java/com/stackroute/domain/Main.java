@@ -16,8 +16,7 @@ public static void main(String[] args){
   Movie movie2 = (Movie) context.getBean("MovieB");
   System.out.println(movie2);
 
-  ((ClassPathXmlApplicationContext) context).
-    registerShutdownHook();
+  System.out.println(movie1 == movie2);
 
 
 }

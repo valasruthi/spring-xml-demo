@@ -20,11 +20,6 @@
 
   </bean>
   <bean id="MovieB" class="com.stackroute.domain.Movie" scope="prototype" autowire="constructor">
-
   </bean>
-  <bean class="com.stackroute.domain.BeanPostProcessorDemoBean">
-
-  </bean>
-
 
 </beans>
